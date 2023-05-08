@@ -1,5 +1,7 @@
 Take-home for Ophelos
 
+<img width="1164" alt="image" src="https://user-images.githubusercontent.com/84866/236956850-6dcd151b-5baf-4665-adc4-110ca5dd8b7e.png">
+
 ### How to Run
 To run the application, simply execute the following commands:
 
