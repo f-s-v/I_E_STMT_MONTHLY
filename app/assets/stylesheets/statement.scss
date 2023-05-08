@@ -1,0 +1,11 @@
+.statement-container {
+  display: grid;
+  gap: 2em;
+}
+
+.statement-grade {
+  display: inline-block;
+  border-radius: 100%;
+  padding: 0.5em;
+  border: 2px solid black;
+}

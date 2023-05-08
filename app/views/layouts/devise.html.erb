@@ -6,13 +6,16 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "devise", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="devise-layout">
     <%= render 'application/header' %>
     <div class="application-container">
+      <figure class="application-hero">
+        <%= image_tag "signin.png" %>
+      </figure>
       <%= yield %>
     </div>
   </body>

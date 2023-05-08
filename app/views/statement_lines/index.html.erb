@@ -1,0 +1,25 @@
+<div class="statement-container">
+
+  <% StatementLine.kinds.keys.each do |kind| %>
+    <% if @statement_lines[kind] %>
+      <h1 class="action-text"><%= kind.capitalize %></h1>
+      <table class="application-table statement-table">
+        <%- @statement_lines[kind].each do |line| %>
+          <tr>
+            <td class="title"><%= line.title %></td>
+            <td class="amount">£<%= line.amount %>.00</td>
+            <td class="delete"><%= button_to "x", line, method: :delete %></td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+  <% end %>
+
+  <%= link_to "+ add", new_statement_line_path, class: 'action-button' %>
+
+  <h1 class="action-text">Your grade is <span class="statement-grade"><%= statement_grade(@statement_lines) %></span></h1>
+
+  <figure class="application-hero">
+    <%= image_tag "statement.png" %>
+  </figure>
+</div>

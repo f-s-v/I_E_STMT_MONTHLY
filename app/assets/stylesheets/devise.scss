@@ -1,0 +1,19 @@
+
+
+@import "application";
+
+.devise-layout {
+  h2 {
+    // @extend .action-text;
+    display: none;  
+  }
+
+  form {
+    @extend .application-form;
+    padding: 2em 0;
+  }
+
+  .actions * {
+    @extend .action-button;
+  }
+}

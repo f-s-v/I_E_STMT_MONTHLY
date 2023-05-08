@@ -1,0 +1,9 @@
+<div class="application-header">
+  <%= link_to root_path, class: "application-logo action-text" do %>
+    <%= image_tag 'logo.png' %>
+    I&E/STMT (monthly!)
+  <% end %>
+  <% if user_signed_in? %>
+    <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "action-button" %>
+  <% end %>
+</div>

@@ -1,0 +1,32 @@
+<%= form_with(model: statement_line, class: 'application-form') do |form| %>
+  <% if statement_line.errors.any? %>
+    <div>
+      <h2><%= pluralize(statement_line.errors.count, "error") %> prohibited this statement_line from being saved:</h2>
+
+      <ul>
+        <% statement_line.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    £<%= form.number_field :amount %>.00
+  </div>
+
+  <div class="field">
+    <%= form.label :kind %>
+    <%= form.select :kind, :collection => StatementLine.kinds.keys.to_a %>
+  </div>
+
+  <div class="field">
+    <%= form.submit class: 'action-button' %>
+  </div>
+<% end %>
