@@ -17,7 +17,14 @@
 
   <%= link_to "+ add", new_statement_line_path, class: 'action-button' %>
 
-  <h1 class="action-text">Your grade is <span class="statement-grade"><%= statement_grade(@statement_lines) %></span></h1>
+  <% if @statement_lines.keys.size > 0 %>
+    <h1 class="action-text">
+      Your grade is <span class="statement-grade"><%= statement_grade(@statement_lines) %></span>
+    </h1>
+    <h1 class="action-text">
+      Your disposable income is <span class="statement-grade"><%= statement_disposable_income(@statement_lines) %></span>
+    </h1>
+  <% end %>
 
   <figure class="application-hero">
     <%= image_tag "statement.png" %>

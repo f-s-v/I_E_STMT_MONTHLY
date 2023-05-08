@@ -2,7 +2,14 @@ require "test_helper"
 
 class StatementLinesControllerTest < ActionDispatch::IntegrationTest
   setup do
+    sign_in users(:one)
     @statement_line = statement_lines(:one)
+  end
+
+  test "redirect anonymous" do 
+    sign_out users(:one)
+    get statement_lines_url
+    assert_response :redirect
   end
 
   test "should get index" do
@@ -17,25 +24,10 @@ class StatementLinesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create statement_line" do
     assert_difference("StatementLine.count") do
-      post statement_lines_url, params: { statement_line: { amount: @statement_line.amount, kind: @statement_line.kind, user_id: @statement_line.user_id } }
+      post statement_lines_url, params: { statement_line: { amount: @statement_line.amount, kind: @statement_line.kind, user_id: @statement_line.user_id, title: @statement_line.title } }
     end
 
-    assert_redirected_to statement_line_url(StatementLine.last)
-  end
-
-  test "should show statement_line" do
-    get statement_line_url(@statement_line)
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get edit_statement_line_url(@statement_line)
-    assert_response :success
-  end
-
-  test "should update statement_line" do
-    patch statement_line_url(@statement_line), params: { statement_line: { amount: @statement_line.amount, kind: @statement_line.kind, user_id: @statement_line.user_id } }
-    assert_redirected_to statement_line_url(@statement_line)
+    assert_redirected_to statement_lines_url
   end
 
   test "should destroy statement_line" do

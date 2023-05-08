@@ -20,4 +20,11 @@ module StatementLinesHelper
       'D'
     end
   end
+
+  def statement_disposable_income(statement)
+    income_amount = statement["income"] ? statement["income"].map(&:amount).sum : 0
+    expenditure_amount = statement["expenditure"] ? statement["expenditure"].map(&:amount).sum : 0
+
+    income_amount - expenditure_amount
+  end
 end

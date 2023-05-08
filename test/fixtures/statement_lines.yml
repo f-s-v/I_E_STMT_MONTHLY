@@ -1,11 +1,38 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  amount: 1
+  amount: 3250
   user: one
-  kind: 1
+  kind: income
+  title: salary user 1
+
+one_debt:
+  amount: 3250
+  user: one
+  kind: debt
+  title: debt user 1
 
 two:
-  amount: 1
+  amount: 600
+  user: one
+  kind: income
+  title: income user 1
+
+three:
+  amount: 1500
+  user: one
+  kind: expenditure
+  title: expenditure user 1
+
+four:
+  amount: 100
   user: two
-  kind: 1
+  kind: expenditure
+  title: rent user 2
+
+five:
+  amount: 1500
+  user: two
+  kind: income
+  title: salary user 2
+
